@@ -26,4 +26,36 @@ function crossOut() {
 
 li.addEventListener("click", crossOut);
 //End Strikethrough
+
+//Start Add delete Button
+let dBtn = document.createElement("button");
+dBtn.appendChild(document.createTextNode("X"));
+li.appendChild(dBtn);
+dBtn.addEventListener("click", deleteListItem);
+// End Add delete Button
+
+//Add Class Delete (Display: None)
+fuction deleteListItem() {
+    li.classList.add("delete")
 }
+//End Add Class Delete
+
+}
+
+function addListAfterClick() {
+    if (inputLength() > 0) { //makes sure that an empty input field doesn't create a li
+    createListElement();
+    }
+}
+
+function addListAfterKeypress(event) {
+    if (inputLength() > 0 && event.which === 13) {
+        //this now looks to see if you hit "enter/"return
+        //the 13 key is the enter key's keycode, this could also be display by event.keyCode === 13
+        createListElement();
+    }
+}
+
+enterButton.addEventListener("click", addListAfterClick);
+
+input.addEventListener("keypress", addListAfterKeypress);

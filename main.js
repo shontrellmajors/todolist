@@ -35,7 +35,7 @@ dBtn.addEventListener("click", deleteListItem);
 // End Add delete Button
 
 //Add Class Delete (Display: None)
-fuction deleteListItem() {
+function deleteListItem() {
     li.classList.add("delete")
 }
 //End Add Class Delete
